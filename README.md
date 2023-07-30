@@ -1,14 +1,15 @@
 # [점프 투 FastAPI](https://wikidocs.net/book/8531) 클론코딩
 
-가상환경 접속 후
-```
-pip install --upgrade pip
-pip install fastapi
-pip install "uvicorn[standard]"
-pip install sqlalchemy
-pip install alembic
 
-npm create vite@latest frontend -- --template svelte
+가상환경 접속 후
+
+Svelte 실행
+```
 cd frontend
-npm install
+npm run dev
+```
+
+FastAPI 실행
+```
+uvicorn main:app --reload
 ```
