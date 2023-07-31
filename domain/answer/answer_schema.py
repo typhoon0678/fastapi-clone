@@ -1,12 +1,12 @@
 import datetime
 
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, field_validator
 
 
 class AnswerCreate(BaseModel):
     content: str
 
-    @validator('content')
+    @field_validator('content')
     def not_empty(cls, v):
         if not v or not v.strip():
             raise ValueError('빈 값은 허용되지 않습니다.')
@@ -19,4 +19,4 @@ class Answer(BaseModel):
     create_date: datetime.datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True
